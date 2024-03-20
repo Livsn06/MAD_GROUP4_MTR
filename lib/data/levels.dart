@@ -1,6 +1,8 @@
-import 'package:gutlay_etr_mad/model/level_data.dart';
+import 'package:gutlay_etr_mad/model/levels/level_model.dart';
+
 
 List<LevelsData> LEVELSTAGES = [
+
   LevelsData(
     answer: "DOG",
     img: [

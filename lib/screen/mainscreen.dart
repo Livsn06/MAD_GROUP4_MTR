@@ -1,6 +1,8 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:gutlay_etr_mad/data/levels.dart';
-import 'package:gutlay_etr_mad/model/level_data.dart';
+import 'package:gutlay_etr_mad/model/levels/level_model.dart';
 
 import 'package:gutlay_etr_mad/screen/titlescreen.dart';
 
