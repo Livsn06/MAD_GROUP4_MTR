@@ -6,30 +6,6 @@ import 'package:gutlay_etr_mad/screen/ingamescreen.dart';
 import 'package:gutlay_etr_mad/screen/mainscreen.dart';
 import 'package:gutlay_etr_mad/screen/titlescreen.dart';
 
-class CustomScreenRoutes {
-  //
-  static void goto_IngameScreen(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const IngameScreen(),
-      ),
-    );
-  }
-
-  //
-  static void goto_TitleScreen(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const TitleScreen(),
-      ),
-    );
-  }
-
-  //
-}
-
 var screenRouters = GoRouter(
   initialLocation: '/',
   routes: [

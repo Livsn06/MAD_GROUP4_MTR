@@ -5,7 +5,6 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gutlay_etr_mad/providers/letter_functions.dart';
-import 'package:gutlay_etr_mad/routes/routes.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/button_theme.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/color_theme.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/text_theme.dart';

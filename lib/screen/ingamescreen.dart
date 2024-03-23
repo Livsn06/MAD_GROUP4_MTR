@@ -155,8 +155,7 @@ class _EmptyContainerState extends State<EmptyContainer> {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<LetterFunction>(context, listen: false);
-    return Container(
-      color: Colors.amber,
+    return SizedBox(
       width: (widget.answer.length < 4)
           ? 200
           : (widget.answer.length < 5)
