@@ -1,6 +1,5 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gutlay_etr_mad/screen/ingamescreen.dart';
 import 'package:gutlay_etr_mad/screen/mainscreen.dart';

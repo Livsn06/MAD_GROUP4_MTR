@@ -13,11 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (_) => LetterFunction(),
-          )
-        ],
+        providers: [ChangeNotifierProvider(create: (_) => LetterFunction())],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(useMaterial3: true),

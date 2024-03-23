@@ -7,6 +7,7 @@ class LetterFunction extends ChangeNotifier {
   final List<LevelsData> _leveldata = LEVELSTAGES;
   final List<String> _handler = [];
   int _stageNo = 0;
+  final int _percentage = 0;
 
   int get stageindex => _stageNo;
   List<String> get handler => _handler;
@@ -63,4 +64,17 @@ class LetterFunction extends ChangeNotifier {
         (_handler.join('').trim() == leveldata[_stageNo].answer) ? true : false;
     return val;
   }
+
+  // void addHive({required int index, required int percentage}) {
+  //   hivename.put('index': index);
+  //   hivename.put('pecntage': index);
+  // }
+
+  // void setStageno() {
+  //   _stageNo = hivename.get('index');
+  // }
+
+  // void setPoints() {
+  //   _percentage = hivename.get('pecntage');
+  // }
 }
