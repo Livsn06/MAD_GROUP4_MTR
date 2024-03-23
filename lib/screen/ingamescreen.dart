@@ -61,11 +61,16 @@ class _MainScreenState extends State<IngameScreen> {
     );
   }
 
+
 //? ITO SA APPBAR NITONG SCREEN NA TO
   PreferredSizeWidget _appBar({required int indexstage}) {
     return AppBar(
       centerTitle: true,
-      backgroundColor: CustomColorTheme.primaryColor,
+      backgroundColor: (indexstage == 9 ||
+                indexstage == 19 ||
+                indexstage == 29 ||
+                indexstage == 39 ||
+                indexstage == 49) ?  Colors.red : const Color.fromARGB(255, 133, 90, 75),
       //
       leading: IconButton(
         onPressed: () {
@@ -83,12 +88,16 @@ class _MainScreenState extends State<IngameScreen> {
                 indexstage == 29 ||
                 indexstage == 39 ||
                 indexstage == 49)
-            ? "Challenge Mode"
+            ? "Challenge Mode" 
             : "Level ${indexstage + 1}",
         style: CustomTextTheme.textStyle(
           fontsize: 25,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: (indexstage == 9 ||
+                indexstage == 19 ||
+                indexstage == 29 ||
+                indexstage == 39 ||
+                indexstage == 49) ? Colors.yellow : Colors.white,
         ),
       ),
       actions: [
@@ -108,7 +117,6 @@ class _MainScreenState extends State<IngameScreen> {
   }
 }
 
-//
 //? PARA SA 4 NA IMAGE
 class ImageContainer extends StatelessWidget {
   ImageContainer({required this.img, super.key});
@@ -139,7 +147,7 @@ class ImageContainer extends StatelessWidget {
                     color: const Color.fromARGB(255, 188, 213, 255), width: 3)),
             child: Padding(
               padding: const EdgeInsets.all(5),
-              child: Image.network(
+              child: Image.asset(
                 img[i],
                 width: double.infinity,
                 height: double.infinity,

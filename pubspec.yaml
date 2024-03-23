@@ -57,6 +57,22 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/Level -  (1)/Kalbo/
+    - assets/images/Level -  (2)/Baunan/
+    - assets/images/Level -  (3)/Barya/
+    - assets/images/Level -  (4)/Bagsak/
+    - assets/images/Level -  (5)/Ulap/
+    - assets/images/Level -  (6)/Kolehiyo/
+    - assets/images/Level -  (7)/Maleta/
+    - assets/images/Level -  (8)/Laro/
+    - assets/images/Level -  (9)/Damitan/
+    - assets/images/Level -  (10)/Bayanihan/
+    - assets/images/Level -  (11)/Galit/
+    - assets/images/Level -  (12)/Butil/
+    - assets/images/Level -  (13)/Kape/
+    - assets/images/Level -  (14)/Gabi/
+    - assets/images/Level -  (15)/Sapatos/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
