@@ -1,70 +1,67 @@
 // ignore_for_file: must_be_immutable, non_constant_identifier_names, unused_element
 
 import 'package:flutter/material.dart';
-import 'package:gutlay_etr_mad/data/levels.dart';
-import 'package:gutlay_etr_mad/model/levels/level_model.dart';
+import 'package:gutlay_etr_mad/providers/letter_functions.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/color_theme.dart';
+import 'package:gutlay_etr_mad/styles/custom_themes/text_theme.dart';
 import 'package:gutlay_etr_mad/widget/dialog_indicator/dialogs.dart';
-import 'package:gutlay_etr_mad/widget/dialogs.dart';
-import 'package:gutlay_etr_mad/widget/showpicture.dart';
+
+import 'package:provider/provider.dart';
 
 class IngameScreen extends StatefulWidget {
-  IngameScreen({required this.stageNo, required this.boardUpdator, super.key});
-  int stageNo;
-  Function boardUpdator;
+  const IngameScreen({super.key});
+
   @override
   State<IngameScreen> createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<IngameScreen> {
-  List<LevelsData> leveldata = LEVELSTAGES;
-
-  List<String> OUT = [];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: CustomColorTheme.secondaryColor,
-      appBar: _appBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          //* IMAGE CONTAINER
-          //? dito mag papakita 4 na image
-          Expanded(
-              flex: 7,
-              child: ImageContainer(
-                img: leveldata[widget.stageNo].img,
-              )),
+    return Consumer<LetterFunction>(
+      builder: (context, value, child) {
+        return Scaffold(
+          backgroundColor: CustomColorTheme.secondaryColor,
+          appBar: _appBar(indexstage: value.stageindex),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              //* IMAGE CONTAINER
+              //? dito mag papakita 4 na image
+              Expanded(
+                  flex: 7,
+                  child: ImageContainer(
+                    img: value.leveldata[value.stageindex].img,
+                  )),
 
-          //* EMPTY CONTAINER
-          //? dito naman ung container para sa sagot
-          Expanded(
-            flex: 2,
-            child: EmptyContainer(
-                resetter: _reset,
-                input: OUT,
-                answer: leveldata[widget.stageNo].answer),
-          ),
+              //* EMPTY CONTAINER
+              //? dito naman ung container para sa sagot
+              Expanded(
+                flex: 2,
+                child: EmptyContainer(
+                  input: value.handler,
+                  answer: value.leveldata[value.stageindex].answer,
+                ),
+              ),
 
-          //* LETTERS CONTAINER
-          //? dto mo makikita lahat ng leters na available
-          Expanded(
-            flex: 3,
-            child: LetterContainer(
-              adder: _addLetter,
-              letter: leveldata[widget.stageNo].letter,
-            ),
+              //* LETTERS CONTAINER
+              //? dto mo makikita lahat ng leters na available
+              Expanded(
+                flex: 3,
+                child: LetterContainer(
+                  letter: value.leveldata[value.stageindex].letter,
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
-// TODO: Kasama to sa lalagyan ko ng Provider
 //? ITO SA APPBAR NITONG SCREEN NA TO
-  PreferredSizeWidget _appBar() {
+  PreferredSizeWidget _appBar({required int indexstage}) {
     return AppBar(
       centerTitle: true,
       backgroundColor: CustomColorTheme.primaryColor,
@@ -80,62 +77,20 @@ class _MainScreenState extends State<IngameScreen> {
         color: Colors.white,
       ),
       title: Text(
-          (widget.stageNo == 9 ||
-                  widget.stageNo == 19 ||
-                  widget.stageNo == 29 ||
-                  widget.stageNo == 39 ||
-                  widget.stageNo == 49)
-              ? "Challenge Mode"
-              : "Level ${widget.stageNo + 1}",
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 25,
-            fontWeight: FontWeight.w600,
-          )),
+        (indexstage == 9 ||
+                indexstage == 19 ||
+                indexstage == 29 ||
+                indexstage == 39 ||
+                indexstage == 49)
+            ? "Challenge Mode"
+            : "Level ${indexstage + 1}",
+        style: CustomTextTheme.textStyle(
+          fontsize: 25,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
+        ),
+      ),
     );
-  }
-
-  _reset(int index) {
-    setState(() {
-      OUT[index] = "";
-    });
-  }
-
-  _addstage() {
-    setState(() {
-      if (widget.stageNo == 14) {
-        widget.stageNo = 0;
-        widget.boardUpdator(0);
-      } else {
-        ++widget.stageNo;
-      }
-    });
-  }
-
-  _addLetter(String ch) {
-    setState(() {
-      if (OUT.contains("")) {
-        int j = OUT.indexOf("");
-        OUT[j] = ch.toUpperCase();
-      } else {
-        if (OUT.length < leveldata[widget.stageNo].answer.length) {
-          OUT.add(ch.toUpperCase());
-        }
-      }
-      if (OUT.join('').trim() == leveldata[widget.stageNo].answer) {
-        showDialog(
-            barrierDismissible: false,
-            context: context,
-            builder: (context) => DialogCorrect(
-                  answer: leveldata[widget.stageNo].answer,
-                  nextStage: _addstage,
-                  output: OUT,
-                ));
-        widget.boardUpdator(widget.stageNo + 1);
-      }
-
-      print(OUT.join(''));
-    });
   }
 }
 
@@ -159,9 +114,8 @@ class ImageContainer extends StatelessWidget {
           onTap: () {
             showDialog(
               context: context,
-              builder: (context) => ZoomPicture(
-                picture: img[i],
-              ),
+              builder: (context) =>
+                  DialogIndicator.zoomPicture(imagePath: img[i]),
             );
           },
           child: Container(
@@ -188,13 +142,8 @@ class ImageContainer extends StatelessWidget {
 //
 //? PARA SA ANSWER CONTAINER
 class EmptyContainer extends StatefulWidget {
-  EmptyContainer(
-      {required this.resetter,
-      required this.input,
-      required this.answer,
-      super.key});
+  EmptyContainer({required this.input, required this.answer, super.key});
 
-  Function resetter;
   String answer;
   List<String> input;
 
@@ -205,6 +154,7 @@ class EmptyContainer extends StatefulWidget {
 class _EmptyContainerState extends State<EmptyContainer> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<LetterFunction>(context, listen: false);
     return Container(
       color: Colors.amber,
       width: (widget.answer.length < 4)
@@ -226,78 +176,31 @@ class _EmptyContainerState extends State<EmptyContainer> {
           mainAxisSpacing: 4,
         ),
         itemBuilder: (_, i) {
+          //
           if (widget.input.join('') == widget.answer) {
             return InkWell(
               onTap: () {},
-              child: Container(
-                decoration: BoxDecoration(
-                    border: Border.all(color: const Color(0xDD00FF40)),
-                    borderRadius: BorderRadius.circular(5),
-                    color: const Color.fromARGB(255, 155, 255, 161)),
-                child: Visibility(
-                  visible: true,
-                  child: Center(
-                    child: Text(
-                      widget.input[i].toUpperCase(),
-                      style: const TextStyle(
-                          color: Colors.black87,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ),
-              ),
+              child: answerIndicator(index: i, isright: true),
             );
-          } else if (i < widget.input.length) {
+          }
+
+          if (i < widget.input.length) {
             return (!widget.input.contains("") &&
                     widget.input.length == widget.answer.length &&
                     widget.input.join('') != widget.answer)
                 ? InkWell(
                     onTap: () {
-                      widget.resetter(i);
+                      provider.reset(index: i);
                     },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color.fromARGB(221, 255, 10, 10)),
-                          borderRadius: BorderRadius.circular(5),
-                          color: const Color.fromARGB(255, 255, 209, 209)),
-                      child: Visibility(
-                        visible: true,
-                        child: Center(
-                          child: Text(
-                            widget.input[i].toUpperCase(),
-                            style: const TextStyle(
-                                color: Colors.black87,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      ),
-                    ),
+                    child: answerIndicator(
+                        index: i, isright: false, hasEmpty: false),
                   )
                 : InkWell(
                     onTap: () {
-                      widget.resetter(i);
+                      provider.reset(index: i);
                     },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black87),
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white),
-                      child: Visibility(
-                        visible: true,
-                        child: Center(
-                          child: Text(
-                            widget.input[i].toUpperCase(),
-                            style: const TextStyle(
-                                color: Colors.black87,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      ),
-                    ),
+                    child: answerIndicator(
+                        index: i, isright: false, hasEmpty: true),
                   );
           } else {
             return InkWell(
@@ -320,17 +223,78 @@ class _EmptyContainerState extends State<EmptyContainer> {
       ),
     );
   }
+
+  Widget answerIndicator(
+      {required int index, required bool isright, bool hasEmpty = false}) {
+    return (isright)
+        ? Container(
+            decoration: BoxDecoration(
+                border: Border.all(color: const Color(0xDD00FF40)),
+                borderRadius: BorderRadius.circular(5),
+                color: const Color.fromARGB(255, 155, 255, 161)),
+            child: Visibility(
+              visible: true,
+              child: Center(
+                child: Text(
+                  widget.input[index].toUpperCase(),
+                  style: const TextStyle(
+                      color: Colors.black87,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
+            ),
+          )
+        : (!hasEmpty)
+            ? Container(
+                decoration: BoxDecoration(
+                    border: Border.all(
+                        color: const Color.fromARGB(221, 255, 10, 10)),
+                    borderRadius: BorderRadius.circular(5),
+                    color: const Color.fromARGB(255, 255, 209, 209)),
+                child: Visibility(
+                  visible: true,
+                  child: Center(
+                    child: Text(
+                      widget.input[index].toUpperCase(),
+                      style: const TextStyle(
+                          color: Colors.black87,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ),
+              )
+            : Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black87),
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.white),
+                child: Visibility(
+                  visible: true,
+                  child: Center(
+                    child: Text(
+                      widget.input[index].toUpperCase(),
+                      style: const TextStyle(
+                          color: Colors.black87,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ),
+              );
+  }
 }
 
 //
 //? PARA SA LETTERS
 class LetterContainer extends StatelessWidget {
-  LetterContainer({required this.adder, required this.letter, super.key});
+  LetterContainer({required this.letter, super.key});
 
-  Function adder;
   List<String> letter;
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<LetterFunction>(context, listen: false);
     return GridView.builder(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
@@ -343,7 +307,11 @@ class LetterContainer extends StatelessWidget {
       itemBuilder: (_, i) {
         return InkWell(
           onTap: () {
-            adder(letter[i].toUpperCase());
+            provider.addLetter(
+              context: context,
+              letter: letter[i].toUpperCase(),
+              stageIndex: provider.stageindex,
+            );
           },
           child: Container(
             decoration: BoxDecoration(
@@ -354,9 +322,10 @@ class LetterContainer extends StatelessWidget {
               child: Text(
                 letter[i].toUpperCase(),
                 style: const TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500),
+                  color: Colors.black87,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),

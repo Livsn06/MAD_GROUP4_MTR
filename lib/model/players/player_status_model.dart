@@ -2,12 +2,12 @@ class PlayerStatusModel {
   String uid;
   String username;
   int currentLevel;
-  int coins;
+  int hint;
 
   PlayerStatusModel({
-    required this.uid,
-    required this.username,
+    this.uid = '',
+    this.username = '',
     this.currentLevel = 0,
-    this.coins = 0,
+    this.hint = 0,
   });
 }
