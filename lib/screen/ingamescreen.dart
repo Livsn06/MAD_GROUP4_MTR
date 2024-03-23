@@ -5,7 +5,6 @@ import 'package:gutlay_etr_mad/providers/letter_functions.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/color_theme.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/text_theme.dart';
 import 'package:gutlay_etr_mad/widget/dialog_indicator/dialogs.dart';
-
 import 'package:provider/provider.dart';
 
 class IngameScreen extends StatefulWidget {
@@ -60,6 +59,7 @@ class _MainScreenState extends State<IngameScreen> {
     );
   }
 
+
 //? ITO SA APPBAR NITONG SCREEN NA TO
   PreferredSizeWidget _appBar({required int indexstage}) {
     return AppBar(
@@ -94,7 +94,6 @@ class _MainScreenState extends State<IngameScreen> {
   }
 }
 
-//
 //? PARA SA 4 NA IMAGE
 class ImageContainer extends StatelessWidget {
   ImageContainer({required this.img, super.key});
