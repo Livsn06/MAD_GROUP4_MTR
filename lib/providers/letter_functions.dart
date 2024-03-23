@@ -2,13 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:gutlay_etr_mad/data/levels.dart';
 import 'package:gutlay_etr_mad/model/levels/level_model.dart';
 import 'package:gutlay_etr_mad/widget/dialog_indicator/dialogs.dart';
+import 'package:hive/hive.dart';
 
 class LetterFunction extends ChangeNotifier {
   final List<LevelsData> _leveldata = LEVELSTAGES;
   final List<String> _handler = [];
+
+//? Opening the created HiveBox
+  final fourPicsOneword_box = Hive.box("4pics1Word_Box");
+
   int _stageNo = 0;
 
-  int get stageindex => _stageNo;
+  int levelIndex() {
+    fourPicsOneword_box.put('level', _stageNo);
+
+    // _stageNo = fourPicsOneword_box.get('level');
+
+    return _stageNo;
+  }
+
+  int get stageindex => levelIndex();
   List<String> get handler => _handler;
   List<LevelsData> get leveldata => _leveldata;
 
