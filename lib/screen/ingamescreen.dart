@@ -104,7 +104,7 @@ class _MainScreenState extends State<IngameScreen> {
         Padding(
           padding: const EdgeInsets.all(15.0),
           child: Text(
-            "${(indexstage * 2) + 2}%",
+            " Filipino Meter: ${(indexstage * 2) + 2}%",
             style: CustomTextTheme.textStyle(
               fontsize: 16,
               fontWeight: FontWeight.w600,

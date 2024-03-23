@@ -72,6 +72,41 @@ flutter:
     - assets/images/Level -  (13)/Kape/
     - assets/images/Level -  (14)/Gabi/
     - assets/images/Level -  (15)/Sapatos/
+    - assets/images/Level -  (16)/Dilim/
+    - assets/images/Level -  (17)/Kampana/
+    - assets/images/Level -  (18)/Hari/
+    - assets/images/Level -  (19)/Kasal/
+    - assets/images/Level -  (20)/Huwad/
+    - assets/images/Level -  (21)/Kakanin/
+    - assets/images/Level -  (22)/Gripo/
+    - assets/images/Level -  (23)/Salamin/
+    - assets/images/Level -  (24)/Alaga/
+    - assets/images/Level -  (25)/Payong/
+    - assets/images/Level -  (26)/agham/
+    - assets/images/Level -  (27)/nagiisip/
+    - assets/images/Level -  (28)/masaya/
+    - assets/images/Level -  (29)/maasim/
+    - assets/images/Level -  (30)/asul/
+    - assets/images/Level -  (31)/pares/
+    - assets/images/Level -  (32)/away/
+    - assets/images/Level -  (33)/sanggol/
+    - assets/images/Level -  (34)/hayop/
+    - assets/images/Level -  (35)/bayani/
+    - assets/images/Level -  (36)/dyus/
+    - assets/images/Level -  (37)/palikuran/
+    - assets/images/Level -  (38)/malungkot/
+    - assets/images/Level -  (39)/teknolohiya/
+    - assets/images/Level -  (40)/indak/
+    - assets/images/Level -  (41)/pagibig/
+    - assets/images/Level -  (42)/tsismisan/
+    - assets/images/Level -  (43)/alok/
+    - assets/images/Level -  (44)/pananampalataya/
+    - assets/images/Level -  (45)/larawan/
+    - assets/images/Level -  (46)/libro/
+    - assets/images/Level -  (47)/behikulo/
+    - assets/images/Level -  (48)/malabo/
+    - assets/images/Level -  (49)/pagsusuri/
+    - assets/images/Level -  (50)/gubat/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

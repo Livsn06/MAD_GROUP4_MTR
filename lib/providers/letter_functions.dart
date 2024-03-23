@@ -22,7 +22,7 @@ class LetterFunction extends ChangeNotifier {
 
   //? PARA MA UPDATE STAGE
   void updateBoard({required int currentIndex}) {
-    _stageNo = (_stageNo == 14) ? 0 : ++_stageNo;
+    _stageNo = (_stageNo == 49) ? 0 : ++_stageNo;
     DatabaseHelper.setlevelIndex(stageIndex: _stageNo);
     notifyListeners();
   }
