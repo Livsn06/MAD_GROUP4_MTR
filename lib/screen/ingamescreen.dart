@@ -5,6 +5,8 @@ import 'package:gutlay_etr_mad/providers/letter_functions.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/color_theme.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/text_theme.dart';
 import 'package:gutlay_etr_mad/widget/dialog_indicator/dialogs.dart';
+import 'package:hive/hive.dart';
+
 import 'package:provider/provider.dart';
 
 class IngameScreen extends StatefulWidget {
@@ -64,7 +66,11 @@ class _MainScreenState extends State<IngameScreen> {
   PreferredSizeWidget _appBar({required int indexstage}) {
     return AppBar(
       centerTitle: true,
-      backgroundColor: CustomColorTheme.primaryColor,
+      backgroundColor: (indexstage == 9 ||
+                indexstage == 19 ||
+                indexstage == 29 ||
+                indexstage == 39 ||
+                indexstage == 49) ?  Colors.red : const Color.fromARGB(255, 133, 90, 75),
       //
       leading: IconButton(
         onPressed: () {
@@ -82,12 +88,16 @@ class _MainScreenState extends State<IngameScreen> {
                 indexstage == 29 ||
                 indexstage == 39 ||
                 indexstage == 49)
-            ? "Challenge Mode"
+            ? "Challenge Mode" 
             : "Level ${indexstage + 1}",
         style: CustomTextTheme.textStyle(
           fontsize: 25,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: (indexstage == 9 ||
+                indexstage == 19 ||
+                indexstage == 29 ||
+                indexstage == 39 ||
+                indexstage == 49) ? Colors.yellow : Colors.white,
         ),
       ),
     );
@@ -124,7 +134,7 @@ class ImageContainer extends StatelessWidget {
                     color: const Color.fromARGB(255, 188, 213, 255), width: 3)),
             child: Padding(
               padding: const EdgeInsets.all(5),
-              child: Image.network(
+              child: Image.asset(
                 img[i],
                 width: double.infinity,
                 height: double.infinity,

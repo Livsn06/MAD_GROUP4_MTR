@@ -1,12 +1,20 @@
+// ignore_for_file: non_constant_identifier_names, unused_field
+
 import 'package:flutter/material.dart';
 import 'package:gutlay_etr_mad/data/levels.dart';
+import 'package:gutlay_etr_mad/helpers/dbase_hive.dart';
 import 'package:gutlay_etr_mad/model/levels/level_model.dart';
 import 'package:gutlay_etr_mad/widget/dialog_indicator/dialogs.dart';
+import 'package:hive/hive.dart';
 
 class LetterFunction extends ChangeNotifier {
   final List<LevelsData> _leveldata = LEVELSTAGES;
   final List<String> _handler = [];
-  int _stageNo = 0;
+
+//? Opening the created HiveBox
+
+  int _stageNo = DatabaseHelper.getLevelIndex();
+  final int _percentage = 0;
 
   int get stageindex => _stageNo;
   List<String> get handler => _handler;
@@ -15,6 +23,7 @@ class LetterFunction extends ChangeNotifier {
   //? PARA MA UPDATE STAGE
   void updateBoard({required int currentIndex}) {
     _stageNo = (_stageNo == 14) ? 0 : ++_stageNo;
+    DatabaseHelper.setlevelIndex(stageIndex: _stageNo);
     notifyListeners();
   }
 
@@ -63,4 +72,17 @@ class LetterFunction extends ChangeNotifier {
         (_handler.join('').trim() == leveldata[_stageNo].answer) ? true : false;
     return val;
   }
+
+  // void addHive({required int index, required int percentage}) {
+  //   hivename.put('index': index);
+  //   hivename.put('pecntage': index);
+  // }
+
+  // void setStageno() {
+  //   _stageNo = hivename.get('index');
+  // }
+
+  // void setPoints() {
+  //   _percentage = hivename.get('pecntage');
+  // }
 }
