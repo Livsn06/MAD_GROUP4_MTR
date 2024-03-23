@@ -244,7 +244,7 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (21)/Kakanin/Kakanin3.jpg",
       "assets/images/Level -  (21)/Kakanin/Kakanin4.jpg",
     ],
-    letter: ["k", "K", "K", "A", "N", "H", "X", "A", "S", "N", "D", "A"]
+    letter: ["k", "K", "K", "A", "N", "H", "I", "A", "S", "N", "D", "A"]
       ..shuffle(),
   ),
   LevelsData(
@@ -332,7 +332,7 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (29)/maasim/maasim3.jpg",
       "assets/images/Level -  (29)/maasim/maasim4.jpg",
     ],
-    letter: ["L", "Y", "A", "A", "N", "B", "X", "I", "M", "M", "I", "A"]
+    letter: ["L", "Y", "A", "A", "N", "B", "S", "I", "M", "M", "I", "A"]
       ..shuffle(),
   ),
   LevelsData(
@@ -361,7 +361,7 @@ List<LevelsData> LEVELSTAGES = [
     answer: "AWAY",
     img: [
       "assets/images/Level -  (32)/away/away_1.jpg",
-      "assets/images/Level -  (32)/away/away_2.jpg",
+      "assets/images/Level -  (32)/away/away_2.png",
       "assets/images/Level -  (32)/away/away_3.jpg",
       "assets/images/Level -  (32)/away/away_4.jpg",
     ],
@@ -394,7 +394,7 @@ List<LevelsData> LEVELSTAGES = [
     answer: "BAYANI",
     img: [
       "assets/images/Level -  (35)/bayani/bayani1.jpg",
-      "assets/images/Level -  (35)/bayani/bayani2.jpg",
+      "assets/images/Level -  (35)/bayani/bayani2.png",
       "assets/images/Level -  (35)/bayani/bayani3.jpg",
       "assets/images/Level -  (35)/bayani/bayani4.jpg",
     ],
@@ -420,7 +420,7 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (37)/palikuran/palikuran3.jpg",
       "assets/images/Level -  (37)/palikuran/palikuran4.jpg",
     ],
-    letter: ["P", "A", "L", "I", "K", "U", "R", "A", "N", "S", "M", "X"]
+    letter: ["P", "A", "L", "I", "K", "U", "R", "A", "N", "S", "M", "N"]
       ..shuffle(),
   ),
   LevelsData(
@@ -437,7 +437,7 @@ List<LevelsData> LEVELSTAGES = [
   LevelsData(
     answer: "TEKNOLOHIYA",
     img: [
-      "assets/images/Level -  (39)/teknolohiya/teknolohiya1.jpg",
+      "assets/images/Level -  (39)/teknolohiya/technolohiya1.jpg",
       "assets/images/Level -  (39)/teknolohiya/teknolohiya2.jpg",
       "assets/images/Level -  (39)/teknolohiya/teknolohiya3.jpg",
       "assets/images/Level -  (39)/teknolohiya/teknolohiya4.jpg",
@@ -448,7 +448,7 @@ List<LevelsData> LEVELSTAGES = [
   LevelsData(
     answer: "INDAK",
     img: [
-      "assets/images/Level -  (40)/indak/indak1.jpg",
+      "assets/images/Level -  (40)/indak/indak1.jpeg",
       "assets/images/Level -  (40)/indak/indak2.jpg",
       "assets/images/Level -  (40)/indak/indak3.jpg",
       "assets/images/Level -  (40)/indak/indak4.jpg",
@@ -457,23 +457,12 @@ List<LevelsData> LEVELSTAGES = [
       ..shuffle(),
   ),
   LevelsData(
-    answer: "INDAK",
-    img: [
-      "assets/images/Level -  (40)/indak/indak1.jpeg",
-      "assets/images/Level -  (40)/indak/indak2.jpg",
-      "assets/images/Level -  (40)/indak/indak3.jpg",
-      "assets/images/Level -  (40)/indak/indak4.jpg",
-    ],
-    letter: ["I", "N", "D", "A", "K", "G", "M", "E", "S", "R", "E", "A"]
-      ..shuffle(),
-  ),
-  LevelsData(
     answer: "PAGIBIG",
     img: [
       "assets/images/Level -  (41)/pagibig/pagibig1.jpg",
       "assets/images/Level -  (41)/pagibig/pagibig2.jpg",
       "assets/images/Level -  (41)/pagibig/pagibig3.jpeg",
-      "assets/images/Level -  (41)/pagibig/ipagibig4.jpg",
+      "assets/images/Level -  (41)/pagibig/pagibig4.jpg",
     ],
     letter: ["P", "A", "G", "I", "B", "G", "M", "E", "S", "R", "E", "A"]
       ..shuffle(),
