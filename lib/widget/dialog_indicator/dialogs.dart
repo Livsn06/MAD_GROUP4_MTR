@@ -5,49 +5,62 @@ import 'package:gutlay_etr_mad/providers/letter_functions.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/color_theme.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/text_theme.dart';
 import 'package:provider/provider.dart';
-import 'package:quickalert/quickalert.dart';
 
 class DialogIndicator {
   //* EXIT GAME
-  static Future<void> exitDialog(
-      {required BuildContext context, required String title}) async {
-    await QuickAlert.show(
-      context: context,
-      type: QuickAlertType.confirm,
-      disableBackBtn: true,
-      title: title,
-      confirmBtnText: 'Yes, exit',
-      cancelBtnText: 'No',
-      cancelBtnTextStyle: CustomTextTheme.textStyle(
-        color: Colors.black,
+  static AlertDialog exitDialog(
+      {required BuildContext context, required String title}) {
+    return AlertDialog(
+      backgroundColor: CustomColorTheme.secondaryColor,
+      content: Text(
+        title,
+        style: const TextStyle(fontSize: 24, color: Colors.black87),
       ),
-      confirmBtnColor: CustomColorTheme.errorColor,
-      onCancelBtnTap: () {
-        Navigator.of(context).pop();
-        return;
-      },
-      onConfirmBtnTap: () {
-        Navigator.of(context).pop();
-        exit(0);
-      },
+      actions: <Widget>[
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: CustomColorTheme.primaryColor,
+          ),
+          child: const Text(
+            'Hindi',
+            style: TextStyle(color: Colors.white),
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xffEB0000),
+          ),
+          child: const Text(
+            'Oo, Umalis',
+            style: TextStyle(color: Colors.white),
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+            exit(0);
+          },
+        )
+      ],
     );
   }
 
   //* LEAVING IN GAME LEVEL
   static AlertDialog leaveStage(BuildContext context) {
     return AlertDialog(
-      backgroundColor: const Color(0xffD6FAFF),
+      backgroundColor: CustomColorTheme.secondaryColor,
       content: const Text(
-        'Leave the current stage?',
+        'Umalis sa kasalukuyang stage?',
         style: TextStyle(fontSize: 15, color: Colors.black87),
       ),
       actions: <Widget>[
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xff2BC5DF),
+            backgroundColor: CustomColorTheme.primaryColor,
           ),
           child: const Text(
-            'No',
+            'Hindi',
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
@@ -59,7 +72,7 @@ class DialogIndicator {
             backgroundColor: const Color(0xffEB0000),
           ),
           child: const Text(
-            'Yes, Leave',
+            'Oo, Umalis',
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
@@ -142,14 +155,14 @@ class DialogIndicator {
   //* ZOOM PICTURES
   static Dialog zoomPicture({required String imagePath}) {
     return Dialog(
-      backgroundColor: const Color(0xffD6FAFF),
-      insetPadding: const EdgeInsets.all(10),
+      backgroundColor: CustomColorTheme.secondaryColor,
+      insetPadding: const EdgeInsets.all(5),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+        padding: const EdgeInsets.all(5),
         child: Container(
           decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 185, 211, 255),
+              color: CustomColorTheme.primaryColor,
               borderRadius: BorderRadius.circular(5)),
           width: double.infinity,
           child: Image.asset(
@@ -161,6 +174,7 @@ class DialogIndicator {
     );
   }
 
+  //* Show leaderboard
   static Dialog showLeaderboard({required BuildContext context}) {
     var provider = Provider.of<LetterFunction>(context, listen: false);
     return Dialog(

@@ -1,12 +1,14 @@
 // ignore_for_file: must_be_immutable, non_constant_identifier_names, unused_element
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:gutlay_etr_mad/model/letters/letter.dart';
 import 'package:gutlay_etr_mad/providers/letter_functions.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/color_theme.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/text_theme.dart';
 import 'package:gutlay_etr_mad/widget/dialog_indicator/dialogs.dart';
-import 'package:hive/hive.dart';
-
 import 'package:provider/provider.dart';
 
 class IngameScreen extends StatefulWidget {
@@ -19,11 +21,16 @@ class IngameScreen extends StatefulWidget {
 class _MainScreenState extends State<IngameScreen> {
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(context).size.height;
     return Consumer<LetterFunction>(
       builder: (context, value, child) {
         return Scaffold(
-          backgroundColor: CustomColorTheme.secondaryColor,
-          appBar: _appBar(indexstage: value.stageindex),
+          backgroundColor: (value.stageindex % 10 != 9)
+              ? CustomColorTheme.secondaryColor
+              : const Color(0xFFFCC1BD),
+          appBar:
+              _appBar(indexstage: value.stageindex, height: screenHeight * 0.1),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,7 +48,7 @@ class _MainScreenState extends State<IngameScreen> {
               Expanded(
                 flex: 2,
                 child: EmptyContainer(
-                  input: value.handler,
+                  input: value.handler.map((e) => e.letter).toList(),
                   answer: value.leveldata[value.stageindex].answer,
                 ),
               ),
@@ -61,16 +68,14 @@ class _MainScreenState extends State<IngameScreen> {
     );
   }
 
-
 //? ITO SA APPBAR NITONG SCREEN NA TO
-  PreferredSizeWidget _appBar({required int indexstage}) {
+  PreferredSizeWidget _appBar(
+      {required int indexstage, required double height}) {
     return AppBar(
       centerTitle: true,
-      backgroundColor: (indexstage == 9 ||
-                indexstage == 19 ||
-                indexstage == 29 ||
-                indexstage == 39 ||
-                indexstage == 49) ?  Colors.red : const Color.fromARGB(255, 133, 90, 75),
+      toolbarHeight: height,
+      backgroundColor:
+          (indexstage % 10 == 9) ? Colors.red : CustomColorTheme.primaryColor,
       //
       leading: IconButton(
         onPressed: () {
@@ -82,37 +87,32 @@ class _MainScreenState extends State<IngameScreen> {
         icon: const Icon(Icons.arrow_back),
         color: Colors.white,
       ),
-      title: Text(
-        (indexstage == 9 ||
-                indexstage == 19 ||
-                indexstage == 29 ||
-                indexstage == 39 ||
-                indexstage == 49)
-            ? "Challenge Mode" 
-            : "Level ${indexstage + 1}",
-        style: CustomTextTheme.textStyle(
-          fontsize: 25,
-          fontWeight: FontWeight.w600,
-          color: (indexstage == 9 ||
-                indexstage == 19 ||
-                indexstage == 29 ||
-                indexstage == 39 ||
-                indexstage == 49) ? Colors.yellow : Colors.white,
-        ),
-      ),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Text(
-            " Filipino Meter: ${(indexstage * 2) + 2}%",
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            (indexstage % 10 == 9)
+                ? "Challenge Mode"
+                : "Level ${indexstage + 1}",
             style: CustomTextTheme.textStyle(
-              fontsize: 16,
+              fontsize: height * 0.38,
               fontWeight: FontWeight.w600,
+              color: (indexstage % 10 == 9)
+                  ? const Color(0xFFF1D565)
+                  : Colors.white,
+            ),
+          ),
+          Gap(height * 0.04),
+          Text(
+            " Filipino Meter: ${(indexstage * 2 != 0) ? (indexstage * 2) + 2 : 0}%",
+            style: CustomTextTheme.textStyle(
+              fontsize: height * 0.2,
+              fontWeight: FontWeight.w500,
               color: Colors.white,
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -143,10 +143,10 @@ class ImageContainer extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                    color: const Color.fromARGB(255, 188, 213, 255), width: 3)),
+                border:
+                    Border.all(color: CustomColorTheme.primaryColor, width: 2)),
             child: Padding(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(1),
               child: Image.asset(
                 img[i],
                 width: double.infinity,
@@ -211,14 +211,20 @@ class _EmptyContainerState extends State<EmptyContainer> {
                     widget.input.join('') != widget.answer)
                 ? InkWell(
                     onTap: () {
-                      provider.reset(index: i);
+                      provider.removeSelectedLetter(
+                        indexAt: provider.handler[i].indexAt,
+                      );
+                      provider.reset(letter: provider.handler[i], index: i);
                     },
                     child: answerIndicator(
                         index: i, isright: false, hasEmpty: false),
                   )
                 : InkWell(
                     onTap: () {
-                      provider.reset(index: i);
+                      provider.removeSelectedLetter(
+                        indexAt: provider.handler[i].indexAt,
+                      );
+                      provider.reset(letter: provider.handler[i], index: i);
                     },
                     child: answerIndicator(
                         index: i, isright: false, hasEmpty: true),
@@ -234,7 +240,7 @@ class _EmptyContainerState extends State<EmptyContainer> {
                 child: const Visibility(
                   visible: false,
                   child: Center(
-                    child: Text(""),
+                    child: Text(''),
                   ),
                 ),
               ),
@@ -253,16 +259,13 @@ class _EmptyContainerState extends State<EmptyContainer> {
                 border: Border.all(color: const Color(0xDD00FF40)),
                 borderRadius: BorderRadius.circular(5),
                 color: const Color.fromARGB(255, 155, 255, 161)),
-            child: Visibility(
-              visible: true,
-              child: Center(
-                child: Text(
-                  widget.input[index].toUpperCase(),
-                  style: const TextStyle(
-                      color: Colors.black87,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500),
-                ),
+            child: Center(
+              child: Text(
+                widget.input[index].toUpperCase(),
+                style: const TextStyle(
+                    color: Colors.black87,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500),
               ),
             ),
           )
@@ -273,16 +276,13 @@ class _EmptyContainerState extends State<EmptyContainer> {
                         color: const Color.fromARGB(221, 255, 10, 10)),
                     borderRadius: BorderRadius.circular(5),
                     color: const Color.fromARGB(255, 255, 209, 209)),
-                child: Visibility(
-                  visible: true,
-                  child: Center(
-                    child: Text(
-                      widget.input[index].toUpperCase(),
-                      style: const TextStyle(
-                          color: Colors.black87,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500),
-                    ),
+                child: Center(
+                  child: Text(
+                    widget.input[index].toUpperCase(),
+                    style: const TextStyle(
+                        color: Colors.black87,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
               )
@@ -291,16 +291,13 @@ class _EmptyContainerState extends State<EmptyContainer> {
                     border: Border.all(color: Colors.black87),
                     borderRadius: BorderRadius.circular(5),
                     color: Colors.white),
-                child: Visibility(
-                  visible: true,
-                  child: Center(
-                    child: Text(
-                      widget.input[index].toUpperCase(),
-                      style: const TextStyle(
-                          color: Colors.black87,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500),
-                    ),
+                child: Center(
+                  child: Text(
+                    widget.input[index].toUpperCase(),
+                    style: const TextStyle(
+                        color: Colors.black87,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
               );
@@ -326,26 +323,45 @@ class LetterContainer extends StatelessWidget {
           mainAxisSpacing: 4,
           crossAxisSpacing: 4),
       itemBuilder: (_, i) {
+        bool value = provider.isselected.any((element) => element.indexAt == i);
         return InkWell(
-          onTap: () {
-            provider.addLetter(
-              context: context,
-              letter: letter[i].toUpperCase(),
-              stageIndex: provider.stageindex,
-            );
-          },
+          onTap: (value)
+              ? null
+              : () {
+                  if (provider.handler.length !=
+                      provider.leveldata[provider.stageindex].answer.length) {
+                    provider.setSelectedLetter(letter: letter[i], index: i);
+                    provider.addLetter(
+                      context: context,
+                      letter: letter[i].toUpperCase(),
+                      indexAt: i,
+                    );
+                  } else {
+                    provider.clearAnswer();
+                    provider.setSelectedLetter(letter: letter[i], index: i);
+                    provider.addLetter(
+                      context: context,
+                      letter: letter[i].toUpperCase(),
+                      indexAt: i,
+                    );
+                  }
+                },
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black87),
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.white),
-            child: Center(
-              child: Text(
-                letter[i].toUpperCase(),
-                style: const TextStyle(
-                  color: Colors.black87,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
+              border: Border.all(color: Colors.black87),
+              borderRadius: BorderRadius.circular(5),
+              color: (value) ? const Color(0xFFFFEBCB) : Colors.white,
+            ),
+            child: Visibility(
+              visible: (value) ? false : true,
+              child: Center(
+                child: Text(
+                  letter[i].toUpperCase(),
+                  style: const TextStyle(
+                    color: Colors.black87,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),

@@ -8,9 +8,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (1)/Kalbo/Kalbo2.jpg",
       "assets/images/Level -  (1)/Kalbo/Kalbo3.jpg",
       "assets/images/Level -  (1)/Kalbo/Kalbo4.jpg",
-    ],
-    letter: ["A", "O", "B", "C", "L", "D", "X", "Q", "P", "D", "E", "K"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "KALBOSEPDIUW".split('')..shuffle(),
   ),
   LevelsData(
     answer: "BAUNAN",
@@ -19,9 +18,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (2)/Baunan/Baunan2.jpg",
       "assets/images/Level -  (2)/Baunan/Baunan3.jpg",
       "assets/images/Level -  (2)/Baunan/Baunan4.jpg",
-    ],
-    letter: ["N", "A", "B", "F", "A", "F", "B", "S", "U", "D", "H", "N"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "BAUNANSIPOLX".split('')..shuffle(),
   ),
   LevelsData(
     answer: "BARYA",
@@ -30,9 +28,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (3)/Barya/Barya2.jpg",
       "assets/images/Level -  (3)/Barya/Barya3.jpg",
       "assets/images/Level -  (3)/Barya/Barya4.jpg",
-    ],
-    letter: ["A", "S", "B", "E", "A", "R", "B", "Y", "L", "D", "H", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "BARYAPERASCI".split('')..shuffle(),
   ),
   LevelsData(
     answer: "BAGSAK",
@@ -41,9 +38,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (4)/Bagsak/Bagsak2.jpg",
       "assets/images/Level -  (4)/Bagsak/Bagsak3.jpg",
       "assets/images/Level -  (4)/Bagsak/Bagsak4.jpg",
-    ],
-    letter: ["B", "S", "G", "E", "A", "R", "B", "H", "S", "D", "A", "K"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "BAGSAKHULOWD".split('')..shuffle(),
   ),
   LevelsData(
     answer: "ULAP",
@@ -52,9 +48,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (5)/Ulap/Ulap2.jpg",
       "assets/images/Level -  (5)/Ulap/Ulap3.jpg",
       "assets/images/Level -  (5)/Ulap/Ulap4.jpg",
-    ],
-    letter: ["L", "S", "Q", "H", "P", "N", "B", "H", "U", "D", "A", "B"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "ULAPLANGITSE".split('')..shuffle(),
   ),
   LevelsData(
     answer: "KOLEHIYO",
@@ -63,9 +58,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (6)/Kolehiyo/Kolehiyo2.jpg",
       "assets/images/Level -  (6)/Kolehiyo/Kolehiyo3.jpg",
       "assets/images/Level -  (6)/Kolehiyo/Kolehiyo4.jpg",
-    ],
-    letter: ["Y", "E", "K", "V", "P", "L", "I", "H", "C", "O", "A", "O"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "KOLEHIYODUJK".split('')..shuffle(),
   ),
   LevelsData(
     answer: "MALETA",
@@ -74,9 +68,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (7)/Maleta/Maleta2.jpg",
       "assets/images/Level -  (7)/Maleta/Maleta3.jpg",
       "assets/images/Level -  (7)/Maleta/Maleta4.jpg",
-    ],
-    letter: ["L", "N", "A", "Z", "P", "E", "I", "T", "A", "O", "D", "M"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "MALETABAGAHE".split('')..shuffle(),
   ),
   LevelsData(
     answer: "LARO",
@@ -85,9 +78,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (8)/Laro/Laro2.jpg",
       "assets/images/Level -  (8)/Laro/Laro3.jpg",
       "assets/images/Level -  (8)/Laro/Laro4.jpg",
-    ],
-    letter: ["R", "S", "X", "A", "U", "E", "I", "J", "M", "O", "D", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "LAROUSTBIGOP".split('')..shuffle(),
   ),
   LevelsData(
     answer: "DAMITAN",
@@ -96,9 +88,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (9)/Damitan/Damitan2.jpg",
       "assets/images/Level -  (9)/Damitan/Damitan3.jpg",
       "assets/images/Level -  (9)/Damitan/Damitan4.jpg",
-    ],
-    letter: ["D", "M", "H", "I", "T", "E", "N", "P", "M", "Z", "A", "O"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "DAMITANPRADO".split('')..shuffle(),
   ),
   LevelsData(
     answer: "BAYANIHAN",
@@ -107,21 +98,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (10)/Bayanihan/Bayanihan2.jpg",
       "assets/images/Level -  (10)/Bayanihan/Bayanihan3.jpg",
       "assets/images/Level -  (10)/Bayanihan/Bayanihan4.jpg",
-    ],
-    letter: [
-      "B",
-      "E",
-      "Y",
-      "A",
-      "T",
-      "A",
-      "I",
-      "P",
-      "M",
-      "H",
-      "D",
-      "N",
     ]..shuffle(),
+    letter: "BAYANIHANTUG".split('')..shuffle(),
   ),
   LevelsData(
     answer: "GALIT",
@@ -130,9 +108,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (11)/Galit/Galit2.jpg",
       "assets/images/Level -  (11)/Galit/Galit3.jpg",
       "assets/images/Level -  (11)/Galit/Galit4.jpg",
-    ],
-    letter: ["A", "E", "T", "X", "W", "G", "I", "N", "X", "Y", "D", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "GALITPIKONSU".split('')..shuffle(),
   ),
   LevelsData(
     answer: "BUTIL",
@@ -141,9 +118,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (12)/Butil/Butil2.jpg",
       "assets/images/Level -  (12)/Butil/Butil3.jpg",
       "assets/images/Level -  (12)/Butil/Butil4.jpg",
-    ],
-    letter: ["B", "E", "O", "X", "W", "G", "I", "A", "U", "L", "D", "T"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "BUTILOPNASQED".split('')..shuffle(),
   ),
   LevelsData(
     answer: "KAPE",
@@ -152,9 +128,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (13)/Kape/Kape2.jpg",
       "assets/images/Level -  (13)/Kape/Kape3.jpg",
       "assets/images/Level -  (13)/Kape/Kape4.jpg",
-    ],
-    letter: ["A", "C", "O", "X", "K", "G", "I", "E", "R", "L", "E", "P"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "KAPEITLSIMZF".split('')..shuffle(),
   ),
   LevelsData(
     answer: "GABI",
@@ -163,9 +138,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (14)/Gabi/Gabi2.jpg",
       "assets/images/Level -  (14)/Gabi/Gabi3.jpg",
       "assets/images/Level -  (14)/Gabi/Gabi4.jpg",
-    ],
-    letter: ["A", "C", "O", "X", "T", "G", "I", "E", "S", "R", "B", "J"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "GABITULMIVEH".split('')..shuffle(),
   ),
   LevelsData(
     answer: "SAPATOS",
@@ -174,9 +148,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (15)/Sapatos/Sapatos2.jpg",
       "assets/images/Level -  (15)/Sapatos/Sapatos3.jpg",
       "assets/images/Level -  (15)/Sapatos/Sapatos4.jpg",
-    ],
-    letter: ["A", "S", "A", "X", "T", "G", "M", "O", "S", "R", "E", "P"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "SAPATOSREGKU".split('')..shuffle(),
   ),
   LevelsData(
     answer: "DILIM",
@@ -185,9 +158,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (16)/Dilim/Dilim2.jpg",
       "assets/images/Level -  (16)/Dilim/Dilim3.jpg",
       "assets/images/Level -  (16)/Dilim/Dilim4.jpg",
-    ],
-    letter: ["D", "S", "M", "X", "I", "G", "M", "O", "S", "R", "I", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "DILIMTGABJSU".split('')..shuffle(),
   ),
   LevelsData(
     answer: "KAMPANA",
@@ -196,9 +168,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (17)/Kampana/Kampana2.jpg",
       "assets/images/Level -  (17)/Kampana/Kampana3.jpg",
       "assets/images/Level -  (17)/Kampana/Kampana4.jpg",
-    ],
-    letter: ["K", "S", "M", "X", "A", "G", "P", "A", "S", "N", "I", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "KAMPANABELLT".split('')..shuffle(),
   ),
   LevelsData(
     answer: "HARI",
@@ -207,9 +178,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (18)/Hari/Hari2.jpg",
       "assets/images/Level -  (18)/Hari/Hari3.jpg",
       "assets/images/Level -  (18)/Hari/Hari4.jpg",
-    ],
-    letter: ["H", "A", "M", "X", "R", "G", "P", "A", "S", "N", "I", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "HARIPSTERWXP".split('')..shuffle(),
   ),
   LevelsData(
     answer: "KASAL",
@@ -218,9 +188,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (19)/Kasal/Kasal2.jpg",
       "assets/images/Level -  (19)/Kasal/Kasal3.jpg",
       "assets/images/Level -  (19)/Kasal/Kasal4.jpg",
-    ],
-    letter: ["L", "A", "K", "X", "R", "G", "X", "A", "S", "L", "I", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "KASALOINMDUB".split('')..shuffle(),
   ),
   LevelsData(
     answer: "HUWAD",
@@ -229,9 +198,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (20)/Huwad/Huwad2.jpg",
       "assets/images/Level -  (20)/Huwad/Huwad3.jpg",
       "assets/images/Level -  (20)/Huwad/Huwad4.jpg",
-    ],
-    letter: ["P", "K", "W", "U", "R", "H", "X", "A", "S", "L", "D", "Q"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "HUWADLOKOBAN".split('')..shuffle(),
   ),
   LevelsData(
     answer: "KAKANIN",
@@ -240,9 +208,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (21)/Kakanin/Kakanin2.jpg",
       "assets/images/Level -  (21)/Kakanin/Kakanin3.jpg",
       "assets/images/Level -  (21)/Kakanin/Kakanin4.jpg",
-    ],
-    letter: ["k", "K", "K", "A", "N", "H", "I", "A", "S", "N", "D", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "KAKANINPGVTO".split('')..shuffle(),
   ),
   LevelsData(
     answer: "GRIPO",
@@ -251,9 +218,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (22)/Gripo/Gripo2.jpg",
       "assets/images/Level -  (22)/Gripo/Gripo3.jpg",
       "assets/images/Level -  (22)/Gripo/Gripo4.jpg",
-    ],
-    letter: ["L", "G", "K", "O", "N", "R", "X", "I", "S", "N", "P", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "GRIPOTUBWZA".split('')..shuffle(),
   ),
   LevelsData(
     answer: "SALAMIN",
@@ -262,9 +228,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (23)/Salamin/Salamin2.jpg",
       "assets/images/Level -  (23)/Salamin/Salamin3.jpg",
       "assets/images/Level -  (23)/Salamin/Salamin4.jpg",
-    ],
-    letter: ["L", "S", "A", "A", "N", "M", "X", "I", "S", "N", "M", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "SALAMINRIKWB".split('')..shuffle(),
   ),
   LevelsData(
     answer: "ALAGA",
@@ -273,9 +238,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (24)/Alaga/Alaga2.jpg",
       "assets/images/Level -  (24)/Alaga/Alaga3.jpg",
       "assets/images/Level -  (24)/Alaga/Alaga4.jpg",
-    ],
-    letter: ["L", "S", "A", "A", "N", "G", "X", "I", "U", "P", "M", "C"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "ALAGASOHYPKB".split('')..shuffle(),
   ),
   LevelsData(
     answer: "PAYONG",
@@ -284,9 +248,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (25)/Payong/Payong2.jpg",
       "assets/images/Level -  (25)/Payong/Payong3.jpg",
       "assets/images/Level -  (25)/Payong/Payong4.jpg",
-    ],
-    letter: ["P", "Y", "A", "A", "N", "G", "X", "I", "U", "P", "O", "C"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "PAYONGKULSIF".split('')..shuffle(),
   ),
   LevelsData(
     answer: "AGHAM",
@@ -295,9 +258,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (26)/agham/agham2.jpg",
       "assets/images/Level -  (26)/agham/agham3.jpg",
       "assets/images/Level -  (26)/agham/agham4.jpg",
-    ],
-    letter: ["M", "Y", "A", "A", "N", "G", "X", "H", "U", "P", "L", "C"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "AGHAMIDEYARL".split('')..shuffle(),
   ),
   LevelsData(
     answer: "NAGIISIP",
@@ -306,9 +268,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (27)/nagiisip/nagiisip2.jpg",
       "assets/images/Level -  (27)/nagiisip/nagiisip3.jpg",
       "assets/images/Level -  (27)/nagiisip/nagiisip4.jpg",
-    ],
-    letter: ["S", "Y", "A", "I", "N", "G", "X", "I", "U", "P", "I", "P"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "NAGIISIPEBTD".split('')..shuffle(),
   ),
   LevelsData(
     answer: "MASAYA",
@@ -317,9 +278,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (28)/masaya/masaya2.jpg",
       "assets/images/Level -  (28)/masaya/masaya3.jpg",
       "assets/images/Level -  (28)/masaya/masaya4.jpg",
-    ],
-    letter: ["S", "Y", "A", "A", "N", "B", "X", "I", "M", "P", "I", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "MASAYAWQPIRT".split('')..shuffle(),
   ),
   LevelsData(
     answer: "MAASIM",
@@ -328,9 +288,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (29)/maasim/maasim2.jpg",
       "assets/images/Level -  (29)/maasim/maasim3.jpg",
       "assets/images/Level -  (29)/maasim/maasim4.jpg",
-    ],
-    letter: ["L", "Y", "A", "A", "N", "B", "S", "I", "M", "M", "I", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "MAASIMPIKTUR".split('')..shuffle(),
   ),
   LevelsData(
     answer: "ASUL",
@@ -339,9 +298,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (30)/asul/asul2.jpg",
       "assets/images/Level -  (30)/asul/asul3.jpg",
       "assets/images/Level -  (30)/asul/asul4.jpg",
-    ],
-    letter: ["L", "S", "Y", "A", "U", "B", "X", "I", "M", "M", "I", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "ASULBERDEPIN".split('')..shuffle(),
   ),
   LevelsData(
     answer: "PARES",
@@ -350,9 +308,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (31)/pares/pares2.jpg",
       "assets/images/Level -  (31)/pares/pares3.jpg",
       "assets/images/Level -  (31)/pares/pares4.jpg",
-    ],
-    letter: ["P", "A", "R", "E", "U", "J", "X", "I", "M", "S", "O", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "PARESDLAWAPW".split('')..shuffle(),
   ),
   LevelsData(
     answer: "AWAY",
@@ -361,9 +318,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (32)/away/away_2.png",
       "assets/images/Level -  (32)/away/away_3.jpg",
       "assets/images/Level -  (32)/away/away_4.jpg",
-    ],
-    letter: ["A", "A", "W", "V", "P", "J", "L", "I", "M", "S", "Y", "L"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "AWAYSRGLITPO".split('')..shuffle(),
   ),
   LevelsData(
     answer: "SANGGOL",
@@ -372,9 +328,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (33)/sanggol/sanggol2.jpg",
       "assets/images/Level -  (33)/sanggol/sanggol3.jpg",
       "assets/images/Level -  (33)/sanggol/sanggol4.jpg",
-    ],
-    letter: ["G", "V", "L", "G", "N", "J", "O", "I", "M", "S", "G", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "SANGGOLBUAKJ".split('')..shuffle(),
   ),
   LevelsData(
     answer: "HAYOP",
@@ -383,9 +338,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (34)/hayop/hayop2.jpg",
       "assets/images/Level -  (34)/hayop/hayop3.jpg",
       "assets/images/Level -  (34)/hayop/hayop4.jpg",
-    ],
-    letter: ["H", "A", "Y", "G", "N", "L", "O", "O", "M", "S", "P", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "HAYOPDTIKGSZ".split('')..shuffle(),
   ),
   LevelsData(
     answer: "BAYANI",
@@ -394,9 +348,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (35)/bayani/bayani2.png",
       "assets/images/Level -  (35)/bayani/bayani3.jpg",
       "assets/images/Level -  (35)/bayani/bayani4.jpg",
-    ],
-    letter: ["L", "A", "Y", "B", "N", "L", "A", "O", "N", "S", "I", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "BAYANIHEROWS".split('')..shuffle(),
   ),
   LevelsData(
     answer: "DYUS",
@@ -405,9 +358,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (36)/dyus/dyus2.jpg",
       "assets/images/Level -  (36)/dyus/dyus3.jpg",
       "assets/images/Level -  (36)/dyus/dyus4.jpg",
-    ],
-    letter: ["D", "S", "Y", "B", "N", "U", "A", "O", "P", "S", "M", "X"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "DYUSINOMBACV".split('')..shuffle(),
   ),
   LevelsData(
     answer: "PALIKURAN",
@@ -416,9 +368,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (37)/palikuran/palikuran2.jpg",
       "assets/images/Level -  (37)/palikuran/palikuran3.jpg",
       "assets/images/Level -  (37)/palikuran/palikuran4.jpg",
-    ],
-    letter: ["P", "A", "L", "I", "K", "U", "R", "A", "N", "S", "M", "N"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "PALIKURANCRS".split('')..shuffle(),
   ),
   LevelsData(
     answer: "MALUNGKOT",
@@ -427,9 +378,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (38)/malungkot/malungkot2.jpg",
       "assets/images/Level -  (38)/malungkot/malungkot3.jpg",
       "assets/images/Level -  (38)/malungkot/malungkot4.jpg",
-    ],
-    letter: ["M", "A", "L", "U", "N", "G", "K", "O", "N", "S", "T", "X"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "MALUNGKOTODI".split('')..shuffle(),
   ),
   LevelsData(
     answer: "TEKNOLOHIYA",
@@ -438,9 +388,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (39)/teknolohiya/teknolohiya2.jpg",
       "assets/images/Level -  (39)/teknolohiya/teknolohiya3.jpg",
       "assets/images/Level -  (39)/teknolohiya/teknolohiya4.jpg",
-    ],
-    letter: ["T", "E", "K", "N", "O", "L", "O", "H", "I", "Y", "A", "X"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "TEKNOLOHIYAD".split('')..shuffle(),
   ),
   LevelsData(
     answer: "INDAK",
@@ -449,9 +398,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (40)/indak/indak2.jpg",
       "assets/images/Level -  (40)/indak/indak3.jpg",
       "assets/images/Level -  (40)/indak/indak4.jpg",
-    ],
-    letter: ["I", "N", "K", "D", "O", "L", "O", "D", "I", "Y", "A", "K"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "INDAKSAYWPCR".split('')..shuffle(),
   ),
   LevelsData(
     answer: "PAGIBIG",
@@ -460,20 +408,18 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (41)/pagibig/pagibig2.jpg",
       "assets/images/Level -  (41)/pagibig/pagibig3.jpeg",
       "assets/images/Level -  (41)/pagibig/pagibig4.jpg",
-    ],
-    letter: ["P", "A", "G", "I", "B", "G", "M", "E", "S", "R", "E", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "PAGIBIGUSOTK".split('')..shuffle(),
   ),
   LevelsData(
-    answer: "TSISMISAN",
+    answer: "TSISMIS",
     img: [
       "assets/images/Level -  (42)/tsimisan/tsimisan1.jpg",
       "assets/images/Level -  (42)/tsimisan/tsimisan2.jpg",
       "assets/images/Level -  (42)/tsimisan/tsimisan3.jpg",
       "assets/images/Level -  (42)/tsimisan/tsimisan4.jpeg",
-    ],
-    letter: ["T", "S", "I", "M", "I", "S", "A", "N", "S", "R", "E", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "TSISMISUAPBW".split('')..shuffle(),
   ),
   LevelsData(
     answer: "ALOK",
@@ -482,9 +428,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (43)/alok/alok2.jpg",
       "assets/images/Level -  (43)/alok/alok3.jpg",
       "assets/images/Level -  (43)/alok/alok4.jpg",
-    ],
-    letter: ["A", "L", "O", "K", "I", "S", "A", "N", "S", "R", "E", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "ALOKTAGYSLIX".split('')..shuffle(),
   ),
   LevelsData(
     answer: "DASAL",
@@ -493,9 +438,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (44)/pananampalataya/pananampalataya2.jpg",
       "assets/images/Level -  (44)/pananampalataya/pananampalataya3.jpg",
       "assets/images/Level -  (44)/pananampalataya/pananampalataya4.jpg",
-    ],
-    letter: ["P", "A", "D", "L", "N", "A", "M", "Y", "S", "R", "T", "F"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "DASALKUMPIRY".split('')..shuffle(),
   ),
   LevelsData(
     answer: "LARAWAN",
@@ -504,9 +448,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (45)/larawan/larawan2.jpg",
       "assets/images/Level -  (45)/larawan/larawan3.jpg",
       "assets/images/Level -  (45)/larawan/larawan4.jpg",
-    ],
-    letter: ["L", "W", "I", "M", "I", "S", "A", "N", "S", "R", "E", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "LARAWANPINTS".split('')..shuffle(),
   ),
   LevelsData(
     answer: "LIBRO",
@@ -515,9 +458,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (46)/libro/libro2.jpg",
       "assets/images/Level -  (46)/libro/libro3.jpg",
       "assets/images/Level -  (46)/libro/libro4.jpg",
-    ],
-    letter: ["L", "S", "I", "M", "B", "S", "A", "N", "S", "R", "E", "O"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "LIBROALAGYAN".split('')..shuffle(),
   ),
   LevelsData(
     answer: "BEHIKULO",
@@ -526,9 +468,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (47)/behikulo/behikulo2.jpg",
       "assets/images/Level -  (47)/behikulo/behikulo3.jpg",
       "assets/images/Level -  (47)/behikulo/behikulo4.jpg",
-    ],
-    letter: ["B", "E", "H", "K", "I", "S", "L", "N", "S", "U", "O", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "BEHIKULOTTAR".split('')..shuffle(),
   ),
   LevelsData(
     answer: "MALABO",
@@ -537,9 +478,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (48)/malabo/malabo2.jpg",
       "assets/images/Level -  (48)/malabo/malabo3.jpeg",
       "assets/images/Level -  (48)/malabo/malabo4.jpg",
-    ],
-    letter: ["T", "L", "I", "M", "I", "O", "A", "N", "B", "R", "E", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "MALABOYHINGZ".split('')..shuffle(),
   ),
   LevelsData(
     answer: "PAGSUSURI",
@@ -548,9 +488,8 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (49)/pagsusuri/pagsusuri2.jpg",
       "assets/images/Level -  (49)/pagsusuri/pagsusuri3.png",
       "assets/images/Level -  (49)/pagsusuri/pagsusuri4.jpg",
-    ],
-    letter: ["P", "G", "I", "M", "I", "S", "A", "N", "U", "R", "E", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "PAGSUSURIARL".split('')..shuffle(),
   ),
   LevelsData(
     answer: "GUBAT",
@@ -559,8 +498,7 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (50)/gubat/gubat2.jpg",
       "assets/images/Level -  (50)/gubat/gubat3.jpg",
       "assets/images/Level -  (50)/gubat/gubat4.jpg",
-    ],
-    letter: ["P", "G", "I", "T", "I", "B", "A", "N", "U", "R", "E", "A"]
-      ..shuffle(),
+    ]..shuffle(),
+    letter: "GUBATPNOSILR".split('')..shuffle(),
   ),
 ];

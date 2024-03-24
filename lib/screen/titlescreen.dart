@@ -1,6 +1,9 @@
 // ignore_for_file: must_be_immutable, non_constant_identifier_names
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,44 +31,46 @@ class _TitleScreenState extends State<TitleScreen> {
       builder: (context, value, child) {
         return Scaffold(
           backgroundColor: CustomColorTheme.secondaryColor,
-          appBar: _appBar(),
+          appBar: _appBar(height: screenHeight * 0.1),
 
           //
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Gap(100),
+              Gap(screenHeight * 0.07),
 
               //* TITLE IMAGE ITO
               Center(
                 child: Image.asset("assets/images/title.png"),
               ),
-              const Gap(50),
+              Gap(screenHeight * 0.04),
 
               //* BUTTON FOR PLAY
               ElevatedButton(
                 style: CustomButtonTheme.primaryStyle(
-                    isAutosize: false, width: screenWidth * 0.9),
+                    isAutosize: false,
+                    width: screenWidth * 0.9,
+                    height: screenHeight * 0.075),
                 onPressed: () {
                   context.go('/ingame');
                 },
                 child: Text(
-                  "Let's Play!",
+                  "Maglaro!",
                   style: CustomTextTheme.textStyle(
                     fontWeight: FontWeight.bold,
-                    fontsize: 35,
+                    fontsize: screenHeight * 0.045,
                     color: Colors.white,
                   ),
                 ),
               ),
-              const Gap(20),
+              Gap(screenHeight * 0.04),
 
               //* BUTTON FOR LEADERBOARDS
               ElevatedButton(
                 style: CustomButtonTheme.secondaryStyle(
                   isAutosize: false,
                   width: screenWidth * 0.6,
-                  height: screenHeight * 0.03,
+                  height: screenHeight * 0.06,
                 ),
                 onPressed: () {
                   showDialog(
@@ -75,10 +80,10 @@ class _TitleScreenState extends State<TitleScreen> {
                   );
                 },
                 child: Text(
-                  "Leaderboards",
+                  "Filipino Pride",
                   style: CustomTextTheme.textStyle(
                     fontWeight: FontWeight.w700,
-                    fontsize: 25,
+                    fontsize: screenHeight * 0.03,
                     color: Colors.white,
                   ),
                 ),
@@ -93,18 +98,20 @@ class _TitleScreenState extends State<TitleScreen> {
                     width: screenWidth * 0.3,
                     height: screenHeight * 0.03,
                   ),
-                  onPressed: () async {
-                    await DialogIndicator.exitDialog(
-                      context: context,
-                      title: "Do you want to exit the game?",
-                    );
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (_) => DialogIndicator.exitDialog(
+                              context: context,
+                              title: "Gusto mo bang umalis sa laro?",
+                            ));
                   },
                   child: Text(
-                    "Quit",
+                    "Umalis",
                     style: CustomTextTheme.textStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
-                      fontsize: 25,
+                      fontsize: screenHeight * 0.025,
                     ),
                   )),
               const Gap(15),
@@ -116,17 +123,30 @@ class _TitleScreenState extends State<TitleScreen> {
   }
 
   //? APP BAR NG TITLE
-  PreferredSizeWidget _appBar() {
+  PreferredSizeWidget _appBar({required double height}) {
     return AppBar(
       automaticallyImplyLeading: false,
+      toolbarHeight: height,
       backgroundColor: CustomColorTheme.primaryColor,
-      title: Text(
-        "Explore Words!",
-        style: GoogleFonts.fredoka(
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-          fontSize: 25,
-        ),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Hanap Salita!",
+              style: CustomTextTheme.textStyle(
+                fontWeight: FontWeight.w800,
+                color: Colors.white,
+                fontsize: height * 0.35,
+              )),
+          Gap(height * 0.04),
+          Text(
+            "Halina't maging isang tunay na Pilipino.",
+            style: CustomTextTheme.textStyle(
+              fontWeight: FontWeight.w500,
+              color: Colors.white,
+              fontsize: height * 0.18,
+            ),
+          ),
+        ],
       ),
     );
   }

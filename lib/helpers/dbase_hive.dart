@@ -11,7 +11,6 @@ class DatabaseHelper {
 
   static int getLevelIndex() {
     var value = fourPicsOneword_box.get('level');
-
     if (value == null) {
       return 0;
     }
