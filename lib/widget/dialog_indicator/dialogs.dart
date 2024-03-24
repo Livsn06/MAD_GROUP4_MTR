@@ -152,7 +152,7 @@ class DialogIndicator {
               color: const Color.fromARGB(255, 185, 211, 255),
               borderRadius: BorderRadius.circular(5)),
           width: double.infinity,
-          child: Image.network(
+          child: Image.asset(
             imagePath,
             fit: BoxFit.cover,
           ),

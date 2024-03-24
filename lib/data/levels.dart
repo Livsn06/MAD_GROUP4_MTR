@@ -1,8 +1,6 @@
 import 'package:gutlay_etr_mad/model/levels/level_model.dart';
 
-
 List<LevelsData> LEVELSTAGES = [
-
   LevelsData(
     answer: "KALBO",
     img: [
@@ -14,15 +12,14 @@ List<LevelsData> LEVELSTAGES = [
     letter: ["A", "O", "B", "C", "L", "D", "X", "Q", "P", "D", "E", "K"]
       ..shuffle(),
   ),
-
   LevelsData(
     answer: "BAUNAN",
     img: [
-       "assets/images/Level -  (2)/Baunan/Baunan1.jpg",
+      "assets/images/Level -  (2)/Baunan/Baunan1.jpg",
       "assets/images/Level -  (2)/Baunan/Baunan2.jpg",
       "assets/images/Level -  (2)/Baunan/Baunan3.jpg",
-      "assets/images/Level -  (2)/Baunan/Baunan4.jpg",    
-      ],
+      "assets/images/Level -  (2)/Baunan/Baunan4.jpg",
+    ],
     letter: ["N", "A", "B", "F", "A", "F", "B", "S", "U", "D", "H", "N"]
       ..shuffle(),
   ),
@@ -75,8 +72,8 @@ List<LevelsData> LEVELSTAGES = [
     img: [
       "assets/images/Level -  (7)/Maleta/Maleta1.jpg",
       "assets/images/Level -  (7)/Maleta/Maleta2.jpg",
-     "assets/images/Level -  (7)/Maleta/Maleta3.jpg",
-     "assets/images/Level -  (7)/Maleta/Maleta4.jpg",
+      "assets/images/Level -  (7)/Maleta/Maleta3.jpg",
+      "assets/images/Level -  (7)/Maleta/Maleta4.jpg",
     ],
     letter: ["L", "N", "A", "Z", "P", "E", "I", "T", "A", "O", "D", "M"]
       ..shuffle(),
@@ -490,14 +487,14 @@ List<LevelsData> LEVELSTAGES = [
       ..shuffle(),
   ),
   LevelsData(
-    answer: "PANANAMPALATAYA",
+    answer: "DASAL",
     img: [
       "assets/images/Level -  (44)/pananampalataya/pananampalataya1.jpg",
       "assets/images/Level -  (44)/pananampalataya/pananampalataya2.jpg",
       "assets/images/Level -  (44)/pananampalataya/pananampalataya3.jpg",
       "assets/images/Level -  (44)/pananampalataya/pananampalataya4.jpg",
     ],
-    letter: ["P", "A", "N", "L", "N", "A", "M", "Y", "S", "R", "T", "A"]
+    letter: ["P", "A", "D", "L", "N", "A", "M", "Y", "S", "R", "T", "F"]
       ..shuffle(),
   ),
   LevelsData(
@@ -544,7 +541,6 @@ List<LevelsData> LEVELSTAGES = [
     letter: ["T", "L", "I", "M", "I", "O", "A", "N", "B", "R", "E", "A"]
       ..shuffle(),
   ),
- 
   LevelsData(
     answer: "PAGSUSURI",
     img: [
@@ -568,4 +564,3 @@ List<LevelsData> LEVELSTAGES = [
       ..shuffle(),
   ),
 ];
-
