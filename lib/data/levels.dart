@@ -414,10 +414,17 @@ List<LevelsData> LEVELSTAGES = [
   LevelsData(
     answer: "TSISMIS",
     img: [
+<<<<<<< HEAD
       "assets/images/Level -  (42)/tsismisan/tsismisan1.jpg",
       "assets/images/Level -  (42)/tsismisan/tsismisan2.jpg",
       "assets/images/Level -  (42)/tsismisan/tsismisan3.jpg",
       "assets/images/Level -  (42)/tsismisan/tsismisan4.jpeg",
+=======
+      "assets/images/Level -  (42)/tsimisan/tsimisan1.jpg",
+      "assets/images/Level -  (42)/tsimisan/tsimisan2.jpg",
+      "assets/images/Level -  (42)/tsimisan/tsimisan3.jpg",
+      "assets/images/Level -  (42)/tsimisan/tsimisan4.jpg",
+>>>>>>> 78759962f0c06ff4c776dd444ef5bb410c424121
     ]..shuffle(),
     letter: "TSISMISUAPBW".split('')..shuffle(),
   ),
