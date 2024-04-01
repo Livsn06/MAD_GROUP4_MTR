@@ -417,7 +417,7 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (42)/tsimisan/tsimisan1.jpg",
       "assets/images/Level -  (42)/tsimisan/tsimisan2.jpg",
       "assets/images/Level -  (42)/tsimisan/tsimisan3.jpg",
-      "assets/images/Level -  (42)/tsimisan/tsimisan4.jpeg",
+      "assets/images/Level -  (42)/tsimisan/tsimisan4.jpg",
     ]..shuffle(),
     letter: "TSISMISUAPBW".split('')..shuffle(),
   ),
