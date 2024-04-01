@@ -1,12 +1,8 @@
 // ignore_for_file: must_be_immutable, non_constant_identifier_names
 
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:gutlay_etr_mad/providers/letter_functions.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/button_theme.dart';
 import 'package:gutlay_etr_mad/styles/custom_themes/color_theme.dart';
@@ -66,37 +62,37 @@ class _TitleScreenState extends State<TitleScreen> {
               Gap(screenHeight * 0.04),
 
               //* BUTTON FOR LEADERBOARDS
-              ElevatedButton(
-                style: CustomButtonTheme.secondaryStyle(
-                  isAutosize: false,
-                  width: screenWidth * 0.6,
-                  height: screenHeight * 0.06,
-                ),
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) =>
-                        DialogIndicator.showLeaderboard(context: context),
-                  );
-                },
-                child: Text(
-                  "Filipino Pride",
-                  style: CustomTextTheme.textStyle(
-                    fontWeight: FontWeight.w700,
-                    fontsize: screenHeight * 0.03,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              // ElevatedButton(
+              //   style: CustomButtonTheme.secondaryStyle(
+              //     isAutosize: false,
+              //     width: screenWidth * 0.6,
+              //     height: screenHeight * 0.06,
+              //   ),
+              //   onPressed: () {
+              //     showDialog(
+              //       context: context,
+              //       builder: (context) =>
+              //           DialogIndicator.showLeaderboard(context: context),
+              //     );
+              //   },
+              //   child: Text(
+              //     "Filipino Pride",
+              //     style: CustomTextTheme.textStyle(
+              //       fontWeight: FontWeight.w700,
+              //       fontsize: screenHeight * 0.03,
+              //       color: Colors.white,
+              //     ),
+              //   ),
+              // ),
 
-              const Spacer(),
+              // const Spacer(),
 
               //* BUTTON FOR EXIT
               ElevatedButton(
                   style: CustomButtonTheme.tritaryStyle(
                     isAutosize: false,
-                    width: screenWidth * 0.3,
-                    height: screenHeight * 0.03,
+                    width: screenWidth * 0.6,
+                    height: screenHeight * 0.06,
                   ),
                   onPressed: () {
                     showDialog(
@@ -111,7 +107,7 @@ class _TitleScreenState extends State<TitleScreen> {
                     style: CustomTextTheme.textStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.white,
-                      fontsize: screenHeight * 0.025,
+                      fontsize: screenHeight * 0.03,
                     ),
                   )),
               const Gap(15),

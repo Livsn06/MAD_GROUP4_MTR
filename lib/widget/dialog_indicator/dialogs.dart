@@ -127,9 +127,15 @@ class DialogIndicator {
             const Padding(padding: EdgeInsets.only(top: 30)),
             ElevatedButton(
               onPressed: () {
-                provider.updateBoard(currentIndex: provider.stageindex);
-                provider.clearAnswer();
-                Navigator.of(context).pop();
+                int index = provider.stageindex + 1;
+
+                if (index <= 49) {
+                  provider.updateBoard(currentIndex: index, context: context);
+                  provider.clearAnswer();
+                  Navigator.of(context).pop();
+                } else {
+                  context.go('/ending');
+                }
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: CustomColorTheme.primaryColor,

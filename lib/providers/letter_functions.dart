@@ -22,8 +22,9 @@ class LetterFunction extends ChangeNotifier {
   List<Letter> get isselected => _selectedLetter;
 
   //? PARA MA UPDATE STAGE
-  void updateBoard({required int currentIndex}) {
-    _stageNo = (_stageNo == 49) ? 0 : ++_stageNo;
+  void updateBoard({required int currentIndex, required BuildContext context}) {
+    _stageNo = (_stageNo > 49) ? 0 : currentIndex;
+
     DatabaseHelper.setlevelIndex(stageIndex: _stageNo);
     notifyListeners();
   }
@@ -60,6 +61,7 @@ class LetterFunction extends ChangeNotifier {
     if (validateAnswer()) {
       showDialog(
           context: context,
+          barrierDismissible: false,
           builder: (context) {
             return DialogIndicator.showCorrectAnswer(context: context);
           });
@@ -85,4 +87,5 @@ class LetterFunction extends ChangeNotifier {
       _selectedLetter.removeWhere((item) => item.indexAt == indexAt);
     }
   }
+
 }

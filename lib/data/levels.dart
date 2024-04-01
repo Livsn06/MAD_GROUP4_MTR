@@ -119,7 +119,7 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (12)/Butil/Butil3.jpg",
       "assets/images/Level -  (12)/Butil/Butil4.jpg",
     ]..shuffle(),
-    letter: "BUTILOPNASQED".split('')..shuffle(),
+    letter: "BUTILOPNASQE".split('')..shuffle(),
   ),
   LevelsData(
     answer: "KAPE",
@@ -219,7 +219,7 @@ List<LevelsData> LEVELSTAGES = [
       "assets/images/Level -  (22)/Gripo/Gripo3.jpg",
       "assets/images/Level -  (22)/Gripo/Gripo4.jpg",
     ]..shuffle(),
-    letter: "GRIPOTUBWZA".split('')..shuffle(),
+    letter: "GRIPOTUBWZAX".split('')..shuffle(),
   ),
   LevelsData(
     answer: "SALAMIN",
